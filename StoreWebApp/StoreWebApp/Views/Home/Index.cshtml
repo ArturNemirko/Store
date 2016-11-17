@@ -1,0 +1,24 @@
+﻿@model List<StoreDB.Entities.Store>
+
+
+@using (Ajax.BeginForm(new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "update",
+    LoadingElementId = "loader"
+}))
+{
+    <br />
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                   @Ajax.ActionLink("Товары", "ShowProducts", "Home",new { id = item.Id},  new AjaxOptions { UpdateTargetId = "results" })
+                </td>
+            </tr>
+            <br/>
+        }
+}

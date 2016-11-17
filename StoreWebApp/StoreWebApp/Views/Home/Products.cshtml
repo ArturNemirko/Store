@@ -1,0 +1,20 @@
+﻿@model List<StoreDB.Entities.Product>
+    
+@using (Ajax.BeginForm(new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "update",
+    LoadingElementId = "loader"
+}))
+{
+    <br />
+    foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+        </tr>
+            <br />
+    }
+}

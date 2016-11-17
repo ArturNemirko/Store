@@ -1,0 +1,9 @@
+D:\Store\StoreWebApp\StoreDB\bin\Debug\StoreDB.dll.config
+D:\Store\StoreWebApp\StoreDB\bin\Debug\StoreDB.dll
+D:\Store\StoreWebApp\StoreDB\bin\Debug\StoreDB.pdb
+D:\Store\StoreWebApp\StoreDB\bin\Debug\EntityFramework.dll
+D:\Store\StoreWebApp\StoreDB\bin\Debug\EntityFramework.SqlServer.dll
+D:\Store\StoreWebApp\StoreDB\bin\Debug\EntityFramework.xml
+D:\Store\StoreWebApp\StoreDB\bin\Debug\EntityFramework.SqlServer.xml
+D:\Store\StoreWebApp\StoreDB\obj\Debug\StoreDB.dll
+D:\Store\StoreWebApp\StoreDB\obj\Debug\StoreDB.pdb
