@@ -8,17 +8,27 @@
     LoadingElementId = "loader"
 }))
 {
-    <br />
-        foreach (var item in Model)
-        {
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
             <tr>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                   @Ajax.ActionLink("Товары", "ShowProducts", "Home",new { id = item.Id},  new AjaxOptions { UpdateTargetId = "results" })
-                </td>
+                <th>Название</th>
+                <th>Товары</th>
             </tr>
-            <br/>
-        }
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @Ajax.ActionLink("Просмотреть все", "ShowProducts", "Home", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "results" })
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
 }
