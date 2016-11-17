@@ -23,7 +23,6 @@ namespace StoreDB
                     Product product = new Product() {Name = String.Format("Product {0}{1}", i+1,j+1), Description = "Description Product"};
                     context.Products.Add(product);
                     store.Products.Add(product);
-                    
                 }
                 context.Stores.Add(store);
             }
