@@ -12,8 +12,8 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Название</th>
-                <th>Товары</th>
+                <th>Name</th>
+                <th>Products</th>
             </tr>
             </thead>
             <tbody>
@@ -24,7 +24,7 @@
                         @item.Name
                     </td>
                     <td>
-                        @Ajax.ActionLink("Просмотреть все", "ShowProducts", "Home", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "results" })
+                        @Ajax.ActionLink("Show all", "ShowProducts", "Home", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "results" })
                     </td>
                 </tr>
             }

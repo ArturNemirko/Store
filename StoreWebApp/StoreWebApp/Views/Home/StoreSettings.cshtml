@@ -1,0 +1,67 @@
+﻿@model List<StoreDB.Entities.Store>
+
+@using (Ajax.BeginForm(new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "update",
+    LoadingElementId = "loader"
+}))
+{
+    <div class="row">
+        <div class="col-sm-6">
+            <label>Delete Store</label>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @using (Html.BeginForm("DeleteStore", "Home", FormMethod.Post))
+                                {
+                                    @Html.Hidden("id", item.Id)
+                                    <input type="submit" value="Delete Store"/>
+                                }
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <label>Create Store</label>
+            @using (Html.BeginForm("CreateStore", "Home", FormMethod.Post))
+            {
+                <label>Enter store name</label>
+                <br />
+                @Html.TextBox("storeName")
+                <br/>
+                <label>Enter store address</label>
+                <br/>
+                @Html.TextBox("storeAddress")
+                <br/>
+                <input style="margin: 5px 0px 0px 0px" type="submit" value="Create Store"/>
+            }
+
+        </div>
+    </div>
+    
+}
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(document).on("click", "a.remove" , function() {
+            $(this).parent().remove();
+        });
+    });
+</script>

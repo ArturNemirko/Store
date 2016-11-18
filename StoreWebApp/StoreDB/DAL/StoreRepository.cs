@@ -41,7 +41,19 @@ namespace StoreDB.DAL
         {
             Store store = dbContext.Stores.Find(id);
             if (store != null)
+            {
+                if (store.Products != null && store.Products.Count > 0)
+                    while (store.Products.Count > 0)
+                    {
+                        store.Products.Remove(store.Products.First());
+                    }
                 dbContext.Stores.Remove(store);
+            }
+        }
+
+        public void AddProduct(int id, Product product)
+        {
+            GetElement(id).Products.Add(product);
         }
     }
 }
